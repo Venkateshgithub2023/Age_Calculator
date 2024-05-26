@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poetsen+One&display=swap" rel="stylesheet">
+	<title></title>
+	<style>
+	html {
+		font-size: 61.5%;
+	}
+
+	.heading {
+		font-size: 3.5rem;
+		text-align: center;
+		font-family: "Poetsen One", sans-serif;
+		font-weight: 399;
+		font-style: normal;
+	}
+
+	.form {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.Label {
+		font-size: 2.5rem;
+		margin: 2rem;
+	}
+
+	.date {
+		width: 10rem;
+		padding: 20px;
+		font-size: 1.2
+rem;
+		border-radius: 9%;
+	}
+
+	body {
+		margin: 199px;
+		height: 199px;
+	}
+
+	.but-submit {
+		background-color: blue;
+		color: white;
+	}
+
+	</style>
+</head>
+<body bgcolor="orange">
+	<h1 class="heading">Age Calculator</h1>
+	<form class="form">
+<fieldset>
+<legend><b><u>Date of Birth Calculation</u><b></legend>
+		<label for="DOB" class="Label">Date Of Birth: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="date" id="DOB" name="DOB" class="date"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="submit" class="but-submit">
+</fieldset>
+	</form>
+	<center><div class="age-div"></div></center>
+	<script>
+	document.addEventListener("DOMContentLoaded", (event) => {
+		const form = document.querySelector(".form");
+		form.addEventListener("submit", (event) => {
+			event.preventDefault();
+			const input = document.querySelector(".date");
+			const bdate = new Date(input.value);
+			const bYear = bdate.getFullYear();
+			const curDate = new Date();
+			const curYear = curDate.getFullYear();
+			const age = curYear - bYear;
+			const div = document.querySelector("div.age-div");
+			//div.textContent = age;
+alert("Are you ready,U r "+age+" years old");
+
+		});
+	});
+	</script>
+</body>
+</html>
